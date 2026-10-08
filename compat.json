@@ -1,0 +1,13 @@
+{
+  "hello": { "status": "playable", "desc": "clear + rect + print + exit" },
+  "gradient": { "status": "playable", "desc": "compute gradient + exit" },
+  "checker": { "status": "playable", "desc": "2 textures damier via cache + blit" },
+  "files": { "status": "playable", "desc": "malloc + open/write/read/close + print" },
+  "pad": { "status": "playable", "desc": "pad x3 + yield + rect" },
+  "dma": { "status": "playable", "desc": "dma fill 16o + exit" },
+  "burn": { "status": "playable", "desc": "boucle 2000 it (bench JIT)" },
+  "threads": { "status": "playable", "desc": "mutex + eflag + spawn/join" },
+  "audio": { "status": "playable", "desc": "3 tons sinus + export WAV" },
+  "x64-hello": { "status": "playable", "desc": "vrai ELF64 x86-64 : write+exit, sortie == natif" },
+  "x64-loop": { "status": "playable", "desc": "vrai ELF64 x86-64 : boucle add/dec/jnz, exit 6" }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PS5 Emulator — Prototype éducatif</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="hero">
+<div class="wrap">
+<p class="badge">Prototype éducatif — ne fait pas tourner les jeux PS5 commerciaux</p>
+<h1>PS5 Emulator <span>Prototype</span></h1>
+<p class="sub">CPU interprète + bus mémoire + GPU framebuffer + noyau HLE. Démo homebrew exécutée dans le navigateur.</p>
+<div class="actions">
+<button id="runBtn">Exécuter la démo homebrew</button>
+<button id="clearBtn" class="ghost">Effacer</button>
+</div>
+</div>
+</header>
+<main class="wrap grid">
+<section class="card screen">
+<h2>Écran GPU — 256 × 144</h2>
+<canvas id="fb" width="256" height="144"></canvas>
+<div class="row"><span id="status">En attente… cliquez sur Exécuter.</span><span id="steps"></span></div>
+<h3>Journal invité</h3>
+<pre id="log">(vide)</pre>
+</section>
+<section class="card">
+<h2>Architecture du prototype</h2>
+<ul>
+<li><strong>CPU</strong> — interprète ISA jouet (LDI, ADD, JMP, SYSCALL…), pas du x86-64 Zen 2.</li>
+<li><strong>Mémoire</strong> — 64 Ko contigus (la vraie PS5 : 16 Go GDDR6 unifiés).</li>
+<li><strong>GPU</strong> — framebuffer logiciel + file CLEAR / RECT (la vraie : RDNA 2 + Vulkan).</li>
+<li><strong>Noyau HLE</strong> — 4 syscalls : EXIT, PRINT, CLEAR, DRAW_RECT.</li>
+<li><strong>Chargeur</strong> — homebrew JSON uniquement. Ni ELF Orbis, ni PKG, ni firmware Sony.</li>
+</ul>
+<h2>Pourquoi pas la vraie PS5 ?</h2>
+<p>En 2026, les meilleurs projets (SharpEmu, KytyPS5) affichent des menus à ~0,6 img/s. Une émulation complète demande JIT x86-64, recompilateur RDNA2→SPIR-V, HLE de 1000+ syscalls Orbis OS et des années d’ingénierie inverse. Ce dépôt pose une base propre et légale pour apprendre.</p>
+<h2>En local (Node 20+)</h2>
+<pre>node cli.js --demo
+npm test</pre>
+</section>
+</main>
+<footer class="wrap foot">PS5 est une marque de Sony. Projet indépendant, sans firmware ni jeu Sony.</footer>
+<script src="./app.js"></script>
+</body>
+</html>

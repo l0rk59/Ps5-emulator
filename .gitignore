@@ -1,0 +1,32 @@
+
+screenshots/
+
+*.log
+
+*.pid
+
+.agents/
+
+.agentsweb/
+
+.omgithub-runtime/
+
+.opencode-ssh/
+
+.opencode-web/
+
+node_modules/
+
+# Garde-fou legal : firmware Sony, cles et dumps console NE DOIVENT JAMAIS
+# etre commit. Ils restent 100 % locaux et prives (risque DMCA + ban console).
+*.PUP
+*.pup
+*.PKG
+*.pkg
+*.bin
+firmware/
+dumps/
+keys/
+*.key
+*keyset*
+PS5UPDATE.PUP
