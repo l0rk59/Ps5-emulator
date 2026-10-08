@@ -1,0 +1,14 @@
+{
+  "name": "ps5-emulator-educatif",
+  "version": "0.1.0",
+  "description": "Squelette éducatif d'émulateur type PS5 (homebrew uniquement, sans firmware Sony)",
+  "type": "module",
+  "scripts": {
+    "start": "node cli.mjs firmware/demo_boot.json",
+    "test": "node tests/run_tests.mjs",
+    "serve": "node static-server.mjs dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
